@@ -72,18 +72,18 @@ print(len(x))
 # 2
 txt = "Hello World"
 x = txt[0]
+x = txt[2:5]
 # 3
 txt = "Hello World"
-x = txt[2:5]
 # 4
 txt = " Hello World "
 x = txt.strip()
 # 5
+txt = txt.lower()
 txt = "Hello World"
 txt = txt.upper()
 # 6
 txt = "Hello World"
-txt = txt.lower()
 # 7
 txt = "Hello World"
 txt = txt.replace("H", "J")
