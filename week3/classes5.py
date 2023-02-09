@@ -14,7 +14,7 @@ class Bank:
         print(f"Ваш кошелек после пополнения {self.balance}")
     def withdraw(self, take_off):
         self.take_off = take_off
-        limit = 250
+        limit = self.balance
         if take_off > limit: 
             print("Вы не можете снять такую сумму")
         else:
