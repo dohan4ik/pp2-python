@@ -7,10 +7,13 @@ a = int(input())
 nums = []
 for i in range(a):
     nums.append(int(input()))
-primes = []
-for i in nums:
+def filter(nums):
+   primes = []
+   for i in nums:
     cnt = 0   
-    if i != 1:
+    if i == 1:
+       continue
+    else:
        for j in range(2, i):
            if i % j == 0:
               cnt += 1
@@ -19,6 +22,5 @@ for i in nums:
        if cnt == 0:
           primes.append(i)
        cnt = 0
-    else:
-        continue
-print(primes)
+       return primes
+print(filter(nums))

@@ -117,3 +117,33 @@ if 5 != 10:
 # 5
 if 5 == 10 or 4 == 4:
     print("At least one of the statements is true")
+# !!!!! if else!!!!#
+# 1 
+a = 50
+b = 10
+if a > b:
+  print("Hello World")
+# 2 
+a = 50
+b = 10
+if a != b:
+  print("Hello World")
+# 3
+a = 50
+b = 10
+if a == b:
+    print("yes")
+else: 
+    print("no")
+# 4
+a = 50
+b = 10
+if a == b:
+    print("1")
+elif a > b:
+    print("2")
+else: 
+    print("3")
+# 5
+if a == b and c == d:
+  print("Hello")
