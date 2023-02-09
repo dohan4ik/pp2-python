@@ -5,11 +5,11 @@
 
 a = int(input()) 
 nums = []
-primes = []
-cnt = 0
 for i in range(a):
     nums.append(int(input()))
+primes = []
 for i in nums:
+    cnt = 0   
     if i != 1:
        for j in range(2, i):
            if i % j == 0:

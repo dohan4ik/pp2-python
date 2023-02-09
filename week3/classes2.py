@@ -3,8 +3,7 @@
 имеют функцию area, которая может вывести площадь фигуры, где площадь Shape по умолчанию равна 0.
 """
 class Shape:
-     def area(self):
-        return 0
+     pass
 class Square(Shape):
      length = None
      def __init__(self, length):
