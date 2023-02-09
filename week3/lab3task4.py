@@ -6,7 +6,6 @@ def filter_primes(numbers):
     primetest = lambda num: num > 1 and all(num % i != 0 for i in range(2, num, 1))
 
     return list(filter(primetest, numbers))
-x = input("Numbers: ")
+x = input()
 numbers = list(map(int, x.split()))
-is_prime = filter_primes(numbers)
-print("Prime numbers:", is_prime)
+print(filter_primes(numbers))
