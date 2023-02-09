@@ -1,3 +1,10 @@
+"""
+ Создайте класс банковского счета, который имеет атрибуты owner, balance и два метода deposit и withdraw. Снятие средств не должно превышать доступный баланс.
+Создайте свой класс, сделайте несколько операций пополнения и снятия средств и проверьте, что счет не может быть переполнен.
+
+class Account:
+    pass
+"""
 class Bank:
     def __init__(self, owner, balance):
         self.owner = owner
@@ -7,7 +14,7 @@ class Bank:
         print(f"Ваш кошелек после пополнения {self.balance}")
     def withdraw(self, take_off):
         self.take_off = take_off
-        limit = 300000
+        limit = 150000
         if take_off > limit: 
             print("Вы не можете снять такую сумму")
         else:

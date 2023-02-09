@@ -9,5 +9,4 @@ def filter_primes(numbers):
 x = input("Numbers: ")
 numbers = list(map(int, x.split()))
 is_prime = filter_primes(numbers)
-
 print("Prime numbers:", is_prime)
