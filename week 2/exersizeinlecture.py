@@ -1,4 +1,4 @@
-"""
+
 import random
 a = random.randint(1, 100)
 print(a)
@@ -13,5 +13,5 @@ while i < 8:
     else: 
         print("Your number greater than compuuter")
         i = i + 1
-"""  
+
 

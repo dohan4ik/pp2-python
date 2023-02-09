@@ -17,7 +17,7 @@
 """
 import random
 def guess_the_number():
-    print("Hello! What is your name?\n")
+    print("Hello! What is your name?")
     name = input()
     print("Well, %s, I am thinking of a number between 1 and 20." % name)
     number = random.randint(1, 20)
@@ -34,7 +34,7 @@ def guess_the_number():
         elif guess > number:
             print("Your guess is too high.")
 
-    print("Good job, %s! You guessed my number in %i guesses." % (name, guess_count))
+    print("Good job, %s! You guessed my number in %i guesses." %(name, guess_count))
 
 
 guess_the_number()

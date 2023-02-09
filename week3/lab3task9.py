@@ -1,8 +1,8 @@
 """
 9. Write a function that computes the volume of a sphere given its radius.
+4p(r)*3/3
 """
-def my_function(radius):
+def my_volume(radius):
     return 4/3 * 3.14 * (radius ** 3)
 radius = int(input())
-volume = my_function(radius)
-print("The volume is %.2f" % volume)
+print(my_volume(radius))

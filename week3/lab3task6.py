@@ -3,9 +3,9 @@
 от пользователя и возвращает предложение с обратными словами. 
 Мы готовы -> Мы готовы
 """
-def reverse(sentence):
-    word = sentence.split()
+def reverse(x):
+    word = x.split()
     word.reverse()
     return ' '.join(word)
 x = input()
-print(reverse())
+print(reverse(x))

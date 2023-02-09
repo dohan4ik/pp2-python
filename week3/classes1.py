@@ -1,10 +1,13 @@
-class Methods:
-    def __init__(self, a):
-        self.get_inf(a)
-        self.pri_inf()
-
-    def get_inf(self, a):
+"""
+1. Определите класс, который имеет как минимум два метода: getString: для получения строки с 
+консольного ввода printString: для печати строки в верхнем регистре.
+"""
+class getString:
+    def __init__(self, x):
+        self.get(x)
+        self.print()
+    def get(self, a):
         self.a = a
-    def pri_inf(self):
+    def print(self):
         print(self.a.upper())
-res = Methods(input())
+x = getString(input())

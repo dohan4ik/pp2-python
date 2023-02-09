@@ -1,15 +1,15 @@
+"""
+. Определите класс Shape и его подкласс Square. Класс Square имеет функцию init, которая принимает в качестве аргумента длину. Оба класса 
+имеют функцию area, которая может вывести площадь фигуры, где площадь Shape по умолчанию равна 0.
+"""
 class Shape:
-     def __init__(self):
-         pass
      def area(self):
         return 0
 class Square(Shape):
      length = None
      def __init__(self, length):
-         self.get_inf(length)
-         self.area()
-     def get_inf(self, length):
          self.length = length
+         self.area()
      def area(self):
          print(self.length ** 2)
 

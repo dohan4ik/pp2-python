@@ -1,6 +1,6 @@
+g = int(input())
 def my_function(g):
     return 28.3495231 * g
-g = int(input())
 print(my_function(g))
 """
 1.В рецепте, который вы читаете, указано, сколько граммов ингредиента вам нужно. 

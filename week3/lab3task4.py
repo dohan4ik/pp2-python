@@ -3,7 +3,7 @@
 чисел в качестве аргумента и возвращать только простые числа из списка.
 """
 def filter_primes(numbers):
-    primetest = lambda num: num > 1 and all(num % i != 0 for i in range(2, num))
+    primetest = lambda num: num > 1 and all(num % i != 0 for i in range(2, num, 1))
 
     return list(filter(primetest, numbers))
 x = input("Numbers: ")
