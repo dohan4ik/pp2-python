@@ -5,6 +5,10 @@ Input the length of a side: 25
 The area of the polygon is: 625
 """
 import math
-sides = int(input("Number of sides: "))
-length = int(input("Length: "))
-gradus = math.cos(180 / sides)
+s = int(input("Number of sides: "))
+l = int(input("Length: "))
+g = math.cos(180 / s)
+p = l * s
+r = (l / (2 * math.tan(math.pi / s)))
+a = (r * p) / 2
+print(int(a))
