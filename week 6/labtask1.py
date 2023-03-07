@@ -1,7 +1,8 @@
 import re
-a = input()
-con = "^a(b)*$"
-if re.search(con, a):
-    print("True")
+a = str(input())
+if re.search(r'^a(b)*$', a):
+    print(True)
+elif re.search(r'^a(0)', a):
+    print(True)
 else:
-    print("False")
+    print(False)

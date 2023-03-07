@@ -1,6 +1,6 @@
 import re
 a = input()
-res1 = re.sub(" ", ",", a)
-res2 = re.sub(" ", ":", a)
-print(res1)
-print(res2)
+result_o1 = re.sub(r' ', ',', a)
+result_t2 = re.sub(r'\.', ':', a)
+print(result_o1)
+print(result_t2)

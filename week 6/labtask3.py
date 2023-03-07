@@ -1,5 +1,4 @@
 import re
-text = input()
-pattern = r'[a-z]+_[a-z]+'
-res = re.findall(pattern, text)
-print(res)
+a = input()
+result =  re.findall(r'[a-z]+-[a-z]+', a)
+print(result) 

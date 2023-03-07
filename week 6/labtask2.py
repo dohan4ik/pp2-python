@@ -1,7 +1,8 @@
 import re
 a = input()
-b = re.findall(r"ab{2,3}", a)
-if b:
-    print("YES")
+if re.search(r'^a(b){3}$', a):
+    print(True)
+elif re.search(r'a(b){2}', a):
+    print(True)
 else:
-    print("NO")
+    print(False)
