@@ -1,6 +1,5 @@
-s_file = input("Введите путь к файлу: ")
-d_file = input("Введите путь ко второму файлу: ")
-with open(s_file, "r") as s, open(d_file, "w") as d:
-    contents = s.read()
-    d.write(contents)
-print("File copied successfully!")
+with open("filetask4lab6.txt", "r") as filetask4lab6:
+    readed = filetask4lab6.read()
+with open("filetask7lab6.txt", "w") as filetask7lab6:
+    filetask7lab6.write(readed)
+print("файд скопирован")

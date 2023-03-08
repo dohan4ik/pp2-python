@@ -1,8 +1,11 @@
-def pal(text):
-    x = text[::-1]
-    if text == x:
-        print("Yes")
+def is_palindrom(text):
+    if text == text[::-1]:
+        return True
     else:
-        print("No")
-c = input("Введите число: ")
-pal(c)
+        return False
+a = input()
+is_palindrom(a)
+if is_palindrom(a) == True:
+    print("Is polindrom!")
+else:
+    print("Is not polindrom.")

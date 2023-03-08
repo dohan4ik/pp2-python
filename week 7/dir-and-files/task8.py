@@ -1,10 +1,11 @@
 import os
-path = input("Введите путь к файлу: ")
+path = input("Путь: ")
 if os.path.exists(path):
+    print("Файл найден")
     if os.access(path, os.W_OK):
         os.remove(path)
-        print("File deleted successfully")
+        print("Файл успешно удален")
     else:
-        print("You don't have permission to delete the file")
+        print("У вас нет разрешение")
 else:
-    print("File does not exist")
+    print("Файл не найден")

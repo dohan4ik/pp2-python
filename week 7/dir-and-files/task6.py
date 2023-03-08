@@ -1,6 +1,6 @@
 import string
-l = list(string.ascii_uppercase)
-for letter in l:
-    n = letter + ".txt"
-    with open(n, "w") as file:
-        file.write("This is file " + n)
+letters = list(string.ascii_uppercase)
+for i in letters:
+    filename = i + ".txt"
+    with open(filename, "w") as file:
+        file.write("This is file " + filename)

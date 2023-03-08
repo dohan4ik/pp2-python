@@ -1,4 +1,4 @@
-my_tuple = (True, True, False, True)
+my_tuple = (True, True)
 if all(my_tuple):
     print("Все элементы кортежа True")
 else:

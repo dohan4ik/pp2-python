@@ -1,7 +1,11 @@
+"""Напишите программу на Python для проверки существования 
+или отсутствия заданного пути. 
+Если путь существует, найдите имя файла и часть каталога по заданному пути."""
 import os
-path = input("Введите путь: ")
+path = input("Path: ")
 if os.path.exists(path):
-    print("Path to directory:", os.path.dirname(path))
-    print("Directory name:", os.path.basename(path))
+    print("Путь существует")
+    print("Путь к файлу: ", os.path.dirname(path))
+    print("Имф файла: ", os.path.basename(path))
 else:
-    print("Path does not exist")
+    print("Путь не существует")

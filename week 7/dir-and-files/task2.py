@@ -1,18 +1,18 @@
 import os
-path = input("Enter path to checking: ")
+path = input("Путь:")
 if os.path.exists(path):
-    print(f"{path} существует")
-    if os.access(path, os.R_OK):
-        print(f"{path} читаемый")
-    else:
-        print(f"{path} не читаемый")
-    if os.access(path, os.W_OK):
-        print(f"{path} доступный для записи")
-    else:
-        print(f"{path} не доступный для записи")
-    if os.access(path, os.X_OK):
-        print(f"{path} исполняемый")
-    else:
-        print(f"{path} не исполняемый")
+    print("Этот путь существует:", path)
 else:
-    print(f"{path} не существует")
+    print("Этот путь не существует", path)
+if os.access(path, os.R_OK):
+    print("Есть разрешение на чтени.")
+else:
+    print("Нет разрешение на чтение")
+if os.access(path, os.W_OK):
+    print("Есть разрешение на запись")
+else:
+    print("Нет разрешение на запись")
+if os.access(path, os.X_OK):
+    print("Есть разрешение на выполнение")
+else:
+    print("Нет разрешениена на разрешение")
