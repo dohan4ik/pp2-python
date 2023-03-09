@@ -9,3 +9,4 @@ if os.path.exists(path):
     print("Имф файла: ", os.path.basename(path))
 else:
     print("Путь не существует")
+                                          #C:\Users\DARkHAN\Desktop\python

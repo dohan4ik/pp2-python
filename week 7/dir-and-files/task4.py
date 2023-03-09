@@ -3,3 +3,4 @@ with open("filetask4lab6.txt", "r") as file:
     for line in file:
         cnt += 1
 print("Количество строк", "filetask4lab6.txt", ":", cnt)
+ #C:\Users\DARkHAN\Desktop\python

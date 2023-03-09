@@ -14,5 +14,5 @@ else:
     print("Нет разрешение на запись")
 if os.access(path, os.X_OK):
     print("Есть разрешение на выполнение")
-else:
-    print("Нет разрешениена на разрешение")
+else:  
+    print("Нет разрешениена на разрешение")            #C:\Users\DARkHAN\Desktop\python
