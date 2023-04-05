@@ -1,0 +1,4 @@
+1.Create a Pygame window with a size of 800x600 pixels and fill it with blue color. 25%
+2.Display an image on the Pygame screen and move it across the screen from left to right and back.25%
+3.Track keyboard key presses in Pygame and print the name of the pressed key to the console.25%
+4.Create a program that generates a random Pygame screen image and saves it to a file.25%
