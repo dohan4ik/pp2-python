@@ -7,7 +7,7 @@ pygame.init()
 white = (255, 255, 255)
 yellow = (255, 255, 102)
 black = (0, 0, 0)
-red = (213, 50, 80)
+red = (255, 0, 0)
 green = (0, 255, 0)
 blue = (50, 153, 213)
  
@@ -26,16 +26,16 @@ font_style = pygame.font.SysFont("bahnschrift", 25)
 score_font = pygame.font.SysFont("comicsansms", 35)
  
 def Your_score(score, levels):
-    value = score_font.render("Your Score: " + str(score), True, yellow)
+    value = score_font.render("Your Score: " + str(score), True, black)
     dis.blit(value, [0, 0])
-    level_score = score_font.render("Level: " + str(levels), True, yellow)
+    level_score = score_font.render("Level: " + str(levels), True, black)
     dis.blit(level_score, [450, 0])
  
 
  
 def our_snake(snake_block, snake_list):
     for x in snake_list:
-        pygame.draw.rect(dis, red, [x[0], x[1], snake_block, snake_block])
+        pygame.draw.rect(dis, green, [x[0], x[1], snake_block, snake_block])
  
  
 def message(msg, color):
@@ -63,8 +63,8 @@ def gameLoop():
     while not game_over:
  
         while game_close == True:
-            dis.fill(blue)
-            message("You Lost! Press C-Play Again or Q-Quit", red)
+            dis.fill()
+            message("You Lost! Press C-Play Again or Q-Quit", green)
             Your_score(Length_of_snake - 1)
             pygame.display.update()
  
@@ -97,8 +97,8 @@ def gameLoop():
             game_close = True
         x1 += x1_change
         y1 += y1_change
-        dis.fill(blue)
-        pygame.draw.rect(dis, green, [foodx, foody, snake_block, snake_block])
+        dis.fill(white)
+        pygame.draw.rect(dis, red, [foodx, foody, snake_block, snake_block])
         snake_Head = []
         snake_Head.append(x1)
         snake_Head.append(y1)
@@ -121,8 +121,10 @@ def gameLoop():
             foodx = round(random.randrange(0, dis_width - snake_block) / 10.0) * 10.0
             foody = round(random.randrange(0, dis_height - snake_block) / 10.0) * 10.0
             Length_of_snake += 1
- 
-        clock.tick(10)
+        if levels >= 1:
+            clock.tick(fps * int(levels))
+        else:
+            clock.tick(fps)
  
     pygame.quit()
     quit()

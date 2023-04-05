@@ -1,5 +1,6 @@
 import pygame
-    
+from tkinter import *
+
 def drawLineBetween(screen, index, start, end, width, color_mode):
     c1 = max(0, min(255, 2 * index - 256))
     c2 = max(0, min(255, 2 * index))
