@@ -79,87 +79,7 @@ def drawRectangle(screen, start, end, width, color):
         pygame.draw.rect(screen, pygame.Color(color), (x2, y2, widthr, height), width) 
     if x2 > x1 and y1 > y2: 
         pygame.draw.rect(screen, pygame.Color(color), (x1, y2, widthr, height), width) 
- 
-# a square 
-def drawSquare(screen, start, end, width, color): 
-    x1 = start[0] 
-    x2 = end[0] 
-    y1 = start[1] 
-    y2 = end[1] 
-    widths = abs(x2-x1) 
-    height = abs(y2-y1) 
-    mn = min(abs(x2-x1), abs(y2-y1)) 
- 
-    # right down 
-    if x2 > x1 and y2 > y1: 
-        pygame.draw.line(screen, pygame.Color(color), (x1,y1-radius/2.3), (x1, y1+mn), width) # левого верха до левого низа 
-        pygame.draw.line(screen, pygame.Color(color), (x1,y1), (x1+mn, y1), width) # левого верха до правого верха 
-        pygame.draw.line(screen, pygame.Color(color), (x1+mn,y1-radius/2.3), (x1+mn, y1+mn), width)  # с правого верха до правого низа 
-        pygame.draw.line(screen, pygame.Color(color), (x1-radius/2.3,y1+mn), (x1+mn+radius/2, y1+mn), width)   # с левого низа до правого низа 
- 
-    # right up 
-    if y2<y1 and x2>x1: 
-        pygame.draw.line(screen, pygame.Color(color), (x1,y1),(x1,y1-mn), width) # левого верха до левого верха 
-        pygame.draw.line(screen, pygame.Color(color), (x1-radius/2.3,y1),(x1+mn,y1), width)  # левого верха до правого верха 
-        pygame.draw.line(screen, pygame.Color(color), (x1-radius/2.3,y1-mn),(x1+mn,y1-mn), width)  # с правого верха до правого низа 
-        pygame.draw.line(screen, pygame.Color(color), (x1+mn,y1+radius/2),(x1+mn,y1-mn-radius/2.3), width)  # с правого низа до левого низа 
- 
-    # left up 
-    if x1>x2 and y1>y2: 
-        pygame.draw.line(screen, pygame.Color(color), (x1,y1+radius/2),(x1,y1-mn), width)  #  с правого низа до правого верха 
-        pygame.draw.line(screen,
 
-        pygame.Color(color), (x1,y1),(x1-mn-radius/2.3,y1), width)  # с правого верха до левого верха 
-        pygame.draw.line(screen, pygame.Color(color), (x1-mn,y1),(x1-mn,y1-mn-radius/2.3), width)   # с левого верха до левого низа 
-        pygame.draw.line(screen, pygame.Color(color), (x1-mn,y1-mn),(x1+radius/2,y1-mn), width)  # с левого низа до правого низа 
- 
-    # left down 
-    if x1>x2 and y1<y2: 
-        pygame.draw.line(screen, pygame.Color(color), (x1,y1-radius/2.3), (x1,y1+mn+radius/2), width)  #   с правого верха до правого низа 
-        pygame.draw.line(screen, pygame.Color(color), (x1,y1+mn), (x1-mn-radius/2.3,y1+mn), width)  # с правого низа до левого низа 
-        pygame.draw.line(screen, pygame.Color(color), (x1-mn,y1+mn), (x1-mn,y1-radius/2.3), width)   # с левого низа до левого верха 
-        pygame.draw.line(screen, pygame.Color(color), (x1-mn,y1), (x1,y1), width)  # с левого верха до правого верха 
- 
- 
-# RightTriangle 
-def drawRightTriangle(screen, start, end, width, color): 
-    x1 = start[0] 
-    x2 = end[0] 
-    y1 = start[1] 
-    y2 = end[1] 
-     
-    if x2 > x1 and y2 > y1: 
-        pygame.draw.polygon(screen, pygame.Color(color), ((x1, y1), (x2, y2), (x1, y2)), width) 
-    if y2 > y1 and x1 > x2: 
-        pygame.draw.polygon(screen, pygame.Color(color), ((x1, y1), (x2, y2), (x1, y2)), width) 
-    if x1 > x2 and y1 > y2: 
-        pygame.draw.polygon(screen, pygame.Color(color), ((x1, y1), (x2, y2), (x2, y1)), width) 
-    if x2 > x1 and y1 > y2: 
-        pygame.draw.polygon(screen, pygame.Color(color), ((x1, y1), (x2, y2), (x2, y1)), width) 
- 
-#   EquilateralTriangle 
-def drawEquilateralTriangle(screen, start, end, width, color): 
-    x1 = start[0] 
-    x2 = end[0] 
-    y1 = start[1] 
-    y2 = end[1] 
- 
-    width_b = abs(x2 - x1) 
-    height = (3**0.5) * width_b / 2 
- 
-    if y2 > y1: 
-        pygame.draw.polygon(screen, pygame.Color(color), ((x1, y2), (x2, y2), ((x1 + x2) / 2, y2 - height)), width) 
-    else: 
-        pygame.draw.polygon(screen, pygame.Color(color), ((x1, y1), (x2, y1), ((x1 + x2) / 2, y1 - height)), width) 
-     
-# Rhombus 
-def drawRhombus(screen, start, end, width, color): 
-    x1 = start[0] 
-    x2 = end[0] 
-    y1 = start[1] 
-    y2 = end[1] 
-    pygame.draw.lines(screen, pygame.Color(color), True, (((x1 + x2) / 2, y1), (x1, (y1 + y2) / 2), ((x1 + x2) / 2, y2), (x2, (y1 + y2) / 2)), width) 
- 
 screen.fill(pygame.Color('White')) 
 while True: 
  
@@ -177,19 +97,11 @@ while True:
                 mode='pen' 
             if event.key==pygame.K_t: 
                 mode='remove' 
-            if event.key==pygame.K_y: 
-                mode='square' 
-            if event.key==pygame.K_u: 
-                mode='RightTriangle' 
-            if event.key==pygame.K_i: 
-                mode='EquilateralTriangle' 
-            if event.key==pygame.K_o: 
-                mode='rhombus' 
             if event.key==pygame.K_r: # cls 
                 screen.fill(pygame.Color('white')) 
             if event.key==pygame.K_1: 
                 color='yellow' 
-            if event.key==pygame.K_2: 
+            if event.key==pygame.K_2:
                 color='green' 
             if event.key==pygame.K_3: 
                 color='black' 
@@ -223,15 +135,6 @@ while True:
                 drawRectangle(screen, prevPos, event.pos, radius, color) 
             elif mode =='circle': 
                 drawCircle(screen,prevPos, event.pos,radius, color) 
-            elif mode=='square': 
-                drawSquare(screen, prevPos, event.pos, radius, color) 
-            elif mode=='RightTriangle': 
-                drawRightTriangle(screen, prevPos, event.pos,radius,color) 
-            elif mode=='EquilateralTriangle': 
-                drawEquilateralTriangle(screen, prevPos, event.pos, radius, color) 
-             
-            elif mode=='rhombus': 
-                drawRhombus(screen, prevPos, event.pos, radius, color) 
             draw=False 
          
         if event.type == pygame.MOUSEMOTION: # перемещение мышки 
@@ -247,5 +150,6 @@ while True:
     pygame.draw.rect(screen, pygame.Color('white'), (5,33,870,50)) 
     render_r=font_r.render(f'{radius}' , True ,pygame.Color(color)) 
     screen.blit(render_r, (5,5)) 
+ 
     pygame.display.flip() 
     clock.tick(60) 

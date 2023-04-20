@@ -7,33 +7,60 @@ class PaintApp:
         self.master = master
         master.title("Paint")
 
-        # создаем холст
+        # create canvas
         self.canvas = Canvas(master, width=400, height=400, bg="white")
         self.canvas.pack()
 
-        # создаем кнопку "Rectangle"
+        # create "Rectangle" button
         self.rect_button = Button(master, text="Rectangle", command=self.draw_rectangle)
         self.rect_button.pack()
 
-        # создаем кнопку "Eraser"
-        self.eraser_button = Button(master, text="Eraser", command=self.activate_eraser)
-        self.eraser_button.pack()
+        # create "Pencil" button
+        self.pencil_button = Button(master, text="Pencil", command=self.activate_pencil)
+        self.pencil_button.pack()
 
-        # задаем начальные координаты прямоугольника
+        # create "Deactivate Pencil" button
+        self.deactivate_pencil_button = Button(master, text="Deactivate Pencil", command=self.deactivate_pencil)
+        self.deactivate_pencil_button.pack()
+
+        # create "Red Pencil" button
+        self.red_pencil_button = Button(master, text="Red Pencil", command=self.red_pencil)
+        self.red_pencil_button.pack()
+
+        # create "Green Pencil" button
+        self.green_pencil_button = Button(master, text="Green Pencil", command=self.green_pencil)
+        self.green_pencil_button.pack()
+
+        # create "Blue Pencil" button
+        self.blue_pencil_button = Button(master, text="Blue Pencil", command=self.blue_pencil)
+        self.blue_pencil_button.pack()
+
+        # set initial rectangle start coordinates
         self.rect_start = None
-        # флаг, указывающий, активен ли ластик
-        self.eraser_active = False
+        # flag indicating whether pencil is active
+        self.pencil_active = False
+        # current pencil color
+        self.pencil_color = "black"
 
-    def activate_eraser(self):
-        self.eraser_active = True
+    def activate_pencil(self):
+        self.pencil_active = True
 
-    def deactivate_eraser(self):
-        self.eraser_active = False
+    def deactivate_pencil(self):
+        self.pencil_active = False
+
+    def red_pencil(self):
+        self.pencil_color = "red"
+
+    def green_pencil(self):
+        self.pencil_color = "green"
+
+    def blue_pencil(self):
+        self.pencil_color = "blue"
 
     def draw_rectangle(self):
-        # устанавливаем начальные координаты прямоугольника
+        # set initial rectangle start coordinates
         self.canvas.bind("<Button-1>", self.set_rect_start)
-        # устанавливаем конечные координаты прямоугольника
+        # set final rectangle end coordinates
         self.canvas.bind("<ButtonRelease-1>", self.draw_rect)
 
     def set_rect_start(self, event):
@@ -41,16 +68,15 @@ class PaintApp:
 
     def draw_rect(self, event):
         if self.rect_start:
-            # получаем конечные координаты прямоугольника
+            # get final rectangle end coordinates
             rect_end = (event.x, event.y)
-            # рисуем прямоугольник или ластик
-            if self.eraser_active:
-                self.canvas.create_rectangle(self.rect_start[0], self.rect_start[1], rect_end[0], rect_end[1],
-                                             outline=self.canvas["bg"], width=5)
+            # draw rectangle or pencil
+            if self.pencil_active:
+                self.canvas.create_line(self.rect_start[0], self.rect_start[1], rect_end[0], rect_end[1], fill=self.pencil_color, width=2)
             else:
                 self.canvas.create_rectangle(self.rect_start[0], self.rect_start[1], rect_end[0], rect_end[1],
                                              outline="black")
-            # сбрасываем начальные координаты прямоугольника
+            # reset initial rectangle start coordinates
             self.rect_start = None
 
 
